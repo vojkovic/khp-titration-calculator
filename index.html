@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KHP Titration Calculator</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+
+<body>
+  <div class="container">
+    <h1>KHP Titration Calculator</h1>
+    <h5>Because calculations are boring.</h5>
+    <br>
+    <div>
+      <p>Select Aliquot Volume:</p>
+      <button id="button20" onclick="setAliquotVolume(20)">20 ml</button>
+      <button id="button25" onclick="setAliquotVolume(25)">25 ml</button>
+    </div>
+    <p>Assumes a 100mL Volumetric Flask.</p>
+    <h2>Average Volume Calculator</h2>
+    <form id="avgVolumeCalcForm">
+      <label for="numTitration">Number of Titrations:</label>
+      <input type="number" id="numTitration" step="1" required>
+    
+      <div id="volumeInputs">
+        <p>Enter the volumes of NaOH used for each titration:</p>
+      </div>
+    
+      <button type="button" onclick="calculateAverageVolume()">Calculate Average Volume</button>
+    </form>
+    <p id="avgVolumeResult"></p>
+    <h2>NaOH Concentration Titration</h2>
+    <form id="calcForm">
+      <label for="khpGrams">Potassium Hydrogen Phthalate (g):</label>
+      <input type="number" id="khpGrams" step="0.001" required>
+
+      <label for="naohVolume">Volume of NaOH (ml):</label>
+      <input type="number" id="naohVolume" step="0.1" required>
+
+      <button type="button" onclick="calculateConcentration()">Calculate NaOH Concentration</button>
+    </form>
+    <p id="result"></p>
+
+    <h2>Unknown Sample Titration</h2>
+    <form id="unknownCalcForm">
+      <label for="naohConcentrationPart2">Concentration of NaOH (mol/L):</label>
+      <input type="number" id="naohConcentrationPart2" step="0.1" required>
+
+      <label for="unknownNaohVolume">Volume of NaOH (ml):</label>
+      <input type="number" id="unknownNaohVolume" step="0.1" required>
+      
+      <button type="button" onclick="calculateUnknownMoles()">Calculate Unknown Moles</button>
+    </form>
+    <p id="unknownResult"></p>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
